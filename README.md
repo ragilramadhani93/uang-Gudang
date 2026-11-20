@@ -65,18 +65,29 @@ Gaya visual: **Tactile Industrial & Warm Swiss Utility** (bersih, kontras tinggi
 
 ---
 
-## 4. Panduan Menjalankan & Membangun (Build) APK Android
+## 4. Panduan Membangun (Build) APK Android
 
-### A. Uji Coba Langsung di Perangkat (Expo Go / Dev Server)
+### A. Build Otomatis di GitHub Actions (Paling Praktis & Gratis)
 
-```bash
-# 1. Jalankan development server
-npx expo start
+Anda dapat membuat file `.apk` langsung menggunakan server gratis GitHub Actions tanpa perlu menginstal apapun di komputer:
 
-# 2. Scan QR Code yang muncul di terminal menggunakan aplikasi Expo Go di HP Android
-```
+1. **Buat Repository Baru di GitHub**:
+   - Buka [github.com/new](https://github.com/new) dan buat repo baru (misal: `ops-gudang-tracker`).
+2. **Push Kode Proyek ke GitHub**:
+   ```bash
+   git remote add origin https://github.com/<username-anda>/ops-gudang-tracker.git
+   git branch -M main
+   git push -u origin main
+   ```
+3. **Download File APK**:
+   - Buka tab **Actions** di repositori GitHub Anda.
+   - Workflow **"Build Android APK"** akan otomatis berjalan (atau tekan **Run workflow**).
+   - Setelah proses selesai (sekitar 5-7 menit), klik hasil run tersebut.
+   - Di bagian bawah (**Artifacts**), klik **`OPS-Gudang-Tracker-APK`** untuk mengunduh file `.apk` langsung ke HP atau komputer Anda!
 
-### B. Build Menjadi File APK Langsung (Direkomendasikan via EAS Cloud)
+---
+
+### B. Build via EAS Cloud (Alternatif)
 
 EAS Build memungkinkan Anda menghasilkan file `.apk` yang siap dipasang langsung ke HP tanpa perlu menginstal Android Studio atau SDK Java di komputer.
 
